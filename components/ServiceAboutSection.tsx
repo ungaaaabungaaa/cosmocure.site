@@ -1,29 +1,30 @@
 import Link from "next/link";
+import { NumberTicker } from "@/components/ui/number-ticker";
 import { clinicContact } from "@/lib/contact";
-import { MovingNumber } from "@/components/MovingNumber";
 
 type Stat = {
   label: string;
+  displayValue: number;
   suffix?: string;
-  useCompactFormat?: boolean;
-  value: number;
+  decimalPlaces?: number;
 };
 
 const stats: Stat[] = [
   {
     label: "Customers",
-    value: 5000,
-    useCompactFormat: true,
+    displayValue: 5,
+    suffix: "K",
   },
   {
     label: "Repeat",
-    value: 4500,
-    useCompactFormat: true,
+    displayValue: 4.5,
+    decimalPlaces: 1,
+    suffix: "K",
   },
   {
     label: "Satisfaction",
     suffix: "%",
-    value: 99,
+    displayValue: 99,
   },
 ];
 
@@ -38,11 +39,12 @@ export function ServiceAboutSection() {
               {stats.map((stat) => (
                 <div key={stat.label} className="space-y-3">
                   <p className="text-4xl lg:text-6xl leading-none text-[#f7f0ea]">
-                    <MovingNumber
-                      duration={1500}
+                    <NumberTicker
+                      className="font-display text-4xl leading-none text-[#f7f0ea] sm:text-6xl"
+                      decimalPlaces={stat.decimalPlaces}
+                      startValue={0}
                       suffix={stat.suffix}
-                      useCompactFormat={stat.useCompactFormat}
-                      value={stat.value}
+                      value={stat.displayValue}
                     />
                   </p>
                   <p className="text-sm uppercase tracking-[0.28em] text-[#c8a882] sm:text-base">
@@ -83,7 +85,7 @@ export function ServiceAboutSection() {
               <div className="flex justify-center lg:justify-end">
                 <div className="overflow-hidden">
                   <img
-                    src="/salon.avif"
+                    src="/salon.png"
                     alt="Service About"
                     className="w-full max-w-[420px] object-cover"
                   />
