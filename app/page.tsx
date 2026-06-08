@@ -1,12 +1,15 @@
 import { ContactSection } from "@/components/ContactSection";
 import { GiftCardSection } from "@/components/GiftCardSection";
 import { FaqSection } from "@/components/FaqSection";
+import { ServiceAboutSection } from "@/components/ServiceAboutSection";
+import { SiteNavBar } from "@/components/SiteNavBar";
 import { ServicesSection } from "@/components/ServicesSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 export default function Home() {
   return (
     <main className="text-muted">
+      <SiteNavBar />
       <section className="px-6 py-24 sm:py-32">
         <div className="mx-auto max-w-5xl">
           <p className="mb-4 font-body text-sm uppercase text-caramel">
@@ -21,6 +24,8 @@ export default function Home() {
           </p>
         </div>
       </section>
+      
+      <ServiceAboutSection />
       <ServicesSection />
       <TestimonialsSection />
       <GiftCardSection />
