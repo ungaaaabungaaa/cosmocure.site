@@ -18,7 +18,6 @@ export default function Home() {
       <GiftCardSection />
       <FaqSection />
       <ContactSection />
-      <Hero />
     </main>
   );
 }

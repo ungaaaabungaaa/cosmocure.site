@@ -30,9 +30,13 @@ export function Hero() {
           </Link>
         </div>
 
-        <div className="rounded-[2.5rem] bg-white/45 p-4 shadow-[0_20px_60px_rgba(30,27,24,0.06)]">
-          <div className="flex aspect-[4/5] items-center justify-center rounded-[2rem] bg-[#f7f1ea] text-center">
-            <img></img>
+        <div className=" p-4">
+          <div className="flex aspect-[4/5] items-center justify-center text-center">
+          <img
+              src="/salon2.png"
+              alt="Cosmocure gift card"
+              className="w-full max-w-[99%] object-cover"
+            />
           </div>
         </div>
       </div>
