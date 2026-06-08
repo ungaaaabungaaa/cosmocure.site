@@ -29,9 +29,10 @@ const stats: Stat[] = [
 
 export function ServiceAboutSection() {
   return (
-    <section className="py-20 sm:py-28">
-      <div className="mx-auto max-w-[100%] min-w-[100%]">
-        <div className="overflow-hidden  bg-[#2a1f1d] px-6 py-16 text-[#f4eee7] sm:px-10 sm:py-20 lg:px-14 lg:py-24">
+    <div className="w-full bg-[#2a1f1d] max-w-[100%]">
+    <section className="px-6 py-24 sm:py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="overflow-hidden bg-[#2a1f1d] px-6 py-16 text-[#f4eee7] sm:px-10 sm:py-20 lg:px-14 lg:py-24">
           <div className="relative">
             <div className="grid gap-4 text-center sm:grid-cols-3 sm:gap-4">
               {stats.map((stat) => (
@@ -51,8 +52,8 @@ export function ServiceAboutSection() {
               ))}
             </div>
 
-            <div className="mt-16 grid gap-14 lg:grid-cols-[1fr_0.95fr] lg:items-end lg:gap-16">
-              <div className="max-w-2xl">
+            <div className="mt-16 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+              <div className="max-w-xl lg:pl-8">
                 <p className="font-body text-sm uppercase tracking-[0.28em] text-[#c8a882]">
                   Book Now
                 </p>
@@ -79,13 +80,20 @@ export function ServiceAboutSection() {
                 </Link>
               </div>
 
-              <div className="relative mx-auto w-full max-w-[100%]">
-                <img src="/salon.avif" alt="Service About" className="w-2/4 h-full object-cover" />
+              <div className="flex justify-center lg:justify-end">
+                <div className="overflow-hidden">
+                  <img
+                    src="/salon.avif"
+                    alt="Service About"
+                    className="w-full max-w-[420px] object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    </div>
   );
 }
