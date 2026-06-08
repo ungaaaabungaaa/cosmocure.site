@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export function GiftCardSection() {
   return (
     <section className="px-6 h-auto py-24 sm:py-32">
@@ -22,11 +20,9 @@ export function GiftCardSection() {
 
         <div className="flex justify-center lg:justify-end">
           <div className="overflow-hidden">
-            <Image
+            <img
               src="/giftcard.png"
               alt="Cosmocure gift card"
-              width={1200}
-              height={1200}
               className="w-full max-w-[99%] object-cover"
             />
           </div>
