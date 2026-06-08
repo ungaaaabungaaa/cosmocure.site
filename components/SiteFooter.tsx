@@ -20,28 +20,6 @@ export function SiteFooter() {
               Aesthetic Clinic.
             </p>
           </div>
-          <nav aria-label="Quick Nav" className="md:justify-self-end">
-            <h2 className="mb-4 font-semibold uppercase text-[#fff8ef]">
-              Helpful Links
-            </h2>
-            <ul className="space-y-4">
-              <li>
-                <Link href="https://www.instagram.com/" className={linkClass}>
-                  Instagram
-                </Link>
-              </li>
-              <li>
-                <a href={clinicContact.phoneHref} className={linkClass}>
-                  Phone
-                </a>
-              </li>
-              <li>
-                <Link href="/privacy-policy" className={linkClass}>
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </nav>
         </div>
 
         <div className="mt-14 border-t border-[#f7eee6]/75 pt-5">
