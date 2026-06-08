@@ -119,16 +119,9 @@ export function ServicesSection() {
     <section className="px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
-          <p className="font-body text-sm uppercase tracking-[0.28em] text-caramel">
-            Services
-          </p>
           <h2 className="mt-4 font-display text-5xl font-bold leading-none text-espresso sm:text-7xl">
-            Price-based services, laid out clearly.
+            Services Offered.
           </h2>
-          <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted">
-            Each section includes an image view on either side. Drop in your
-            photos whenever you are ready.
-          </p>
         </div>
 
         <div className="mt-16 space-y-20 sm:space-y-28">
