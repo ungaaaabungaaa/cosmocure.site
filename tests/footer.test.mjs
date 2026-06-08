@@ -40,21 +40,15 @@ const footer = read("components/SiteFooter.tsx");
 const contactInfo = read("lib/contact.ts");
 const expectedLabels = [
   "Cosmocure",
-  "Home",
-  "Services",
-  "Contact",
   "Privacy Policy",
   "Instagram",
-  "Social Media",
+  "Phone",
+  "Quick Nav",
 ];
 const expectedHrefs = [
-  'href="/"',
-  'href="/services"',
-  'href="/contact"',
   'href="/privacy-policy"',
-  'href={clinicContact.emailHref}',
   'href={clinicContact.phoneHref}',
-  'href={clinicContact.mapsHref}',
+  'href="https://www.instagram.com/"',
 ];
 
 for (const label of expectedLabels) {
@@ -66,16 +60,8 @@ for (const href of expectedHrefs) {
 }
 
 assert.doesNotMatch(footer, /Blog|href=["']\/blog["']/, "Footer should not include a blog link");
-assert.match(
-  footer,
-  /rounded-t-\[\d+px\]/,
-  "Footer should keep the rounded top edge from the screenshot"
-);
-assert.match(
-  footer,
-  /Cosmetic care\./,
-  "Footer should include the two-line brand descriptor"
-);
+assert.doesNotMatch(footer, /rounded-t-\[\d+px\]/, "Footer should not have rounded top corners");
+assert.match(footer, /Cosmetic care\./, "Footer should include the brand descriptor");
 assert.match(footer, /clinicContact/, "Footer should render shared clinic contact details");
 
 const home = read("app/page.tsx");

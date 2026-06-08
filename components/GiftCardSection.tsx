@@ -22,9 +22,11 @@ export function GiftCardSection() {
 
         <div className="flex justify-center lg:justify-end">
           <div className="overflow-hidden">
-            <img
+            <Image
               src="/giftcard.png"
               alt="Cosmocure gift card"
+              width={1200}
+              height={1200}
               className="w-full max-w-[99%] object-cover"
             />
           </div>
