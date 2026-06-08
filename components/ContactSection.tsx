@@ -1,8 +1,10 @@
 import { Mail, MapPin, Phone, type LucideIcon } from "lucide-react";
+import { clinicContact } from "@/lib/contact";
 
 type ContactCard = {
   description: string;
-  detail: string;
+  detail: React.ReactNode;
+  href: string;
   icon: LucideIcon;
   title: string;
 };
@@ -11,39 +13,37 @@ const contactCards: ContactCard[] = [
   {
     title: "Email",
     description: "Our friendly team is here to help.",
-    detail: "hello@cosmocure.site",
+    detail: clinicContact.email,
+    href: clinicContact.emailHref,
     icon: Mail,
   },
   {
     title: "Phone",
-    description: "Open daily: 10am-8pm.",
-    detail: "(929) 727-4089",
+    description: "Open daily: 10 AM - 8 PM",
+    detail: clinicContact.phone,
+    href: clinicContact.phoneHref,
     icon: Phone,
   },
   {
     title: "Office",
     description: "Come say hello at our clinic.",
-    detail: "11 Broadway, Ste 804, New York, NY 10004",
+    detail: (
+      <>
+        {clinicContact.addressLines.map((line) => (
+          <span key={line} className="block">
+            {line}
+          </span>
+        ))}
+      </>
+    ),
+    href: clinicContact.mapsHref,
     icon: MapPin,
   },
 ];
 
 export function ContactSection() {
   return (
-    <section className="relative overflow-hidden bg-cream px-6 py-20 text-center text-muted sm:py-24">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-20 top-24 h-40 w-40 rounded-full border border-espresso/45"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-10 -top-24 h-40 w-40 rounded-full border border-espresso/45"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-28 left-12 h-44 w-44 rounded-full border border-espresso/45"
-      />
-
+    <section className="bg-cream px-6 py-20 text-center text-muted sm:py-24">
       <div className="relative mx-auto max-w-6xl">
         <p className="font-body text-sm text-caramel">Contact us</p>
         <h2 className="mt-2 font-display text-4xl font-bold leading-tight text-espresso sm:text-5xl">
@@ -54,7 +54,7 @@ export function ContactSection() {
         </p>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {contactCards.map(({ description, detail, icon: Icon, title }) => (
+          {contactCards.map(({ description, detail, href, icon: Icon, title }) => (
             <article
               key={title}
               className="rounded-lg bg-white/70 px-6 py-10 shadow-[0_20px_60px_rgba(30,27,24,0.06)] backdrop-blur"
@@ -66,9 +66,14 @@ export function ContactSection() {
                 {title}
               </h3>
               <p className="mt-3 text-sm font-light leading-6">{description}</p>
-              <p className="mx-auto mt-6 max-w-48 text-sm font-semibold leading-6 text-espresso">
+              <a
+                href={href}
+                className="mx-auto mt-6 block max-w-56 text-sm font-semibold leading-6 text-espresso transition-colors hover:text-caramel"
+                target={href === clinicContact.mapsHref ? "_blank" : undefined}
+                rel={href === clinicContact.mapsHref ? "noreferrer" : undefined}
+              >
                 {detail}
-              </p>
+              </a>
             </article>
           ))}
         </div>

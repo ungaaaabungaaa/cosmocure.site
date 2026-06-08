@@ -6,6 +6,7 @@ const root = process.cwd();
 const read = (file) => readFileSync(path.join(root, file), "utf8");
 
 const requiredFiles = [
+  "lib/contact.ts",
   "components/SiteFooter.tsx",
   "components/ContactSection.tsx",
   "app/page.tsx",
@@ -36,6 +37,7 @@ assert.match(
 );
 
 const footer = read("components/SiteFooter.tsx");
+const contactInfo = read("lib/contact.ts");
 const expectedLabels = [
   "Cosmocure",
   "Home",
@@ -50,6 +52,9 @@ const expectedHrefs = [
   'href="/services"',
   'href="/contact"',
   'href="/privacy-policy"',
+  'href={clinicContact.emailHref}',
+  'href={clinicContact.phoneHref}',
+  'href={clinicContact.mapsHref}',
 ];
 
 for (const label of expectedLabels) {
@@ -71,6 +76,7 @@ assert.match(
   /Cosmetic care\./,
   "Footer should include the two-line brand descriptor"
 );
+assert.match(footer, /clinicContact/, "Footer should render shared clinic contact details");
 
 const home = read("app/page.tsx");
 assert.match(home, /Cosmocure Aesthetic Clinic/, "Home page should not be empty");
@@ -83,6 +89,16 @@ assert.match(
 assert.match(home, /<ContactSection\s*\/>/, "Home page should render ContactSection");
 
 const contactSection = read("components/ContactSection.tsx");
+assert.doesNotMatch(
+  contactSection,
+  /pointer-events-none absolute|rounded-full border border-espresso\/45/,
+  "Contact section should not include decorative curve line elements"
+);
+assert.match(
+  contactSection,
+  /clinicContact/,
+  "Contact section should render shared clinic contact details"
+);
 for (const icon of ["Mail", "Phone", "MapPin"]) {
   assert.match(contactSection, new RegExp(icon), `Contact section should use ${icon}`);
 }
@@ -93,3 +109,16 @@ for (const label of ["Contact us", "Get In Touch", "Email", "Phone", "Office"]) 
 
 const packageJson = read("package.json");
 assert.match(packageJson, /"lucide-react"/, "Project should depend on lucide-react");
+
+for (const detail of [
+  "contact@cosmocure.site",
+  "8794201743",
+  "Ground floor, Yomcha building Medical line",
+  "Behind General Hospital Aalo",
+  "West siang, Arunachal Pradesh",
+  "https://www.google.com/maps/search/?api=1&query=",
+  "tel:+918794201743",
+  "mailto:contact@cosmocure.site",
+]) {
+  assert.match(contactInfo, new RegExp(detail.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `Contact info should include ${detail}`);
+}
