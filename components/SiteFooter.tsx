@@ -17,12 +17,12 @@ export function SiteFooter() {
               Cosmocure
             </Link>
             <p className="mt-5 max-w-44 text-sm font-light leading-6 text-[#f7eee6]">
-              Cosmetic care.
+              Aesthetic Clinic.
             </p>
           </div>
           <nav aria-label="Quick Nav" className="md:justify-self-end">
             <h2 className="mb-4 font-semibold uppercase text-[#fff8ef]">
-              Quick Nav
+              Helpful Links
             </h2>
             <ul className="space-y-4">
               <li>
