@@ -39,7 +39,7 @@ const serviceBlocks: ServiceBlock[] = [
     description:
       "Advanced skin-focused treatments for smoother texture and visible refinement.",
     imageAlt: "Advanced skin treatment",
-    imageSrc: "/AdvancedSkin.jpeg",
+    imageSrc: "/AdvancedSkin.jpg",
     items: [
       { name: "PRP face", price: "3500" },
       { name: "Microneedling with serum", price: "3500" },
@@ -66,7 +66,7 @@ const serviceBlocks: ServiceBlock[] = [
     description:
       "Hair-focused treatments for strengthening, restoration, and scalp care.",
     imageAlt: "Hair treatment",
-    imageSrc: "/HairTreatments.avif",
+    imageSrc: "/HairTreatments.jpg",
     items: [
       { name: "PRP hair", price: "3500" },
       { name: "GFC hair", price: "5000" },
@@ -78,7 +78,7 @@ const serviceBlocks: ServiceBlock[] = [
     description:
       "Body contouring treatments designed for a cleaner, more sculpted feel.",
     imageAlt: "Body contouring treatment",
-    imageSrc: "/BodyContouring.jpg",
+    imageSrc: "/BodyContouring.avif",
     items: [
       { name: "RF face", price: "2500" },
       { name: "RF body + cavitation", price: "3500" },
