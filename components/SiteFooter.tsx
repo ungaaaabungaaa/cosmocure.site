@@ -17,7 +17,7 @@ export function SiteFooter() {
               Cosmocure
             </Link>
             <p className="mt-5 max-w-44 text-sm font-light leading-6 text-[#f7eee6]">
-              Aesthetic Clinic.
+              Heal Within Glow Beyound.
             </p>
           </div>
         </div>
