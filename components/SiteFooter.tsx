@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { clinicContact } from "@/lib/contact";
 
 const linkClass =
   "text-xs font-light text-[#f7eee6] transition-colors hover:text-gold";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 bg-[#2a1f1d] text-[#f7eee6]">
+    <footer className="mt-16 rounded-t-[32px] bg-[#2a1f1d] text-[#f7eee6]">
       <div className="mx-auto max-w-full px-8 py-14 sm:px-12 lg:px-16">
         <div className="grid gap-12 md:grid-cols-[1.5fr_0.7fr_0.8fr_0.9fr] md:items-start">
           <div>
@@ -16,7 +17,7 @@ export function SiteFooter() {
               Cosmocure
             </Link>
             <p className="mt-5 max-w-44 text-sm font-light leading-6 text-[#f7eee6]">
-              Aesthetic Clinic.
+              Cosmetic care.
             </p>
           </div>
 
@@ -47,6 +48,26 @@ export function SiteFooter() {
                 <Link href="/contact" className={linkClass}>
                   Contact
                 </Link>
+              </li>
+              <li>
+                <a href={clinicContact.emailHref} className={linkClass}>
+                  Email
+                </a>
+              </li>
+              <li>
+                <a href={clinicContact.phoneHref} className={linkClass}>
+                  Phone
+                </a>
+              </li>
+              <li>
+                <a
+                  href={clinicContact.mapsHref}
+                  className={linkClass}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Office
+                </a>
               </li>
               <li>
                 <Link href="/privacy-policy" className={linkClass}>

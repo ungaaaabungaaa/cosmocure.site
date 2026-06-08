@@ -111,14 +111,14 @@ const packageJson = read("package.json");
 assert.match(packageJson, /"lucide-react"/, "Project should depend on lucide-react");
 
 for (const detail of [
-  "contact@cosmocure.site",
+  "cosmocure7@gmail.com",
   "8794201743",
   "Ground floor, Yomcha building Medical line",
   "Behind General Hospital Aalo",
   "West siang, Arunachal Pradesh",
   "https://www.google.com/maps/search/?api=1&query=",
   "tel:+918794201743",
-  "mailto:contact@cosmocure.site",
+  "mailto:cosmocure7@gmail.com",
 ]) {
   assert.match(contactInfo, new RegExp(detail.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `Contact info should include ${detail}`);
 }
