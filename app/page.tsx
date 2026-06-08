@@ -1,8 +1,9 @@
 import { ContactSection } from "@/components/ContactSection";
+import { FaqSection } from "@/components/FaqSection";
 
 export default function Home() {
   return (
-    <main className="bg-cream text-muted">
+    <main className="text-muted">
       <section className="px-6 py-24 sm:py-32">
         <div className="mx-auto max-w-5xl">
           <p className="mb-4 font-body text-sm uppercase text-caramel">
@@ -17,6 +18,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <FaqSection />
       <ContactSection />
     </main>
   );

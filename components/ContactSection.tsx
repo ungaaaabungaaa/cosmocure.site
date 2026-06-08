@@ -43,7 +43,7 @@ const contactCards: ContactCard[] = [
 
 export function ContactSection() {
   return (
-    <section className="bg-cream px-6 py-20 text-center text-muted sm:py-24">
+    <section className="px-6 py-20 text-center text-muted sm:py-24">
       <div className="relative mx-auto max-w-6xl">
         <p className="font-body text-sm text-caramel">Contact us</p>
         <h2 className="mt-2 font-display text-4xl font-bold leading-tight text-espresso sm:text-5xl">

@@ -1,6 +1,6 @@
 export default function ContactPage() {
   return (
-    <main className="bg-cream px-6 py-24 text-muted sm:py-32">
+    <main className="px-6 py-24 text-muted sm:py-32">
       <section className="mx-auto max-w-5xl">
         <p className="mb-4 font-body text-sm uppercase text-caramel">
           Contact

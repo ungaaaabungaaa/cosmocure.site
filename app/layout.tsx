@@ -38,7 +38,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${playfair.variable} ${cormorant.variable} ${jost.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col bg-cream font-body text-muted">
+      <body className="flex min-h-full flex-col font-body text-muted">
         <div className="flex-1">{children}</div>
         <SiteFooter />
       </body>
