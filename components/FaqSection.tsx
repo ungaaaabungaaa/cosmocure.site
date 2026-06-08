@@ -18,60 +18,29 @@ const faqItems = [
       "Payment is collected after the service is completed, so you can settle it at the end of your appointment.",
   },
   {
-    question: "What Medi Facials do you offer?",
-    answer: (
-      <ul className="space-y-2">
-        <li>Hydrafacial + LED - 2000</li>
-        <li>Advanced hydrafacial - 3500</li>
-        <li>Chemical peel + LED - 2500</li>
-        <li>Carbon facial - 4000</li>
-        <li>Microdermabrasion crystal / diamond tip - 1000</li>
-        <li>Oxygeneo facial - 3000</li>
-        <li>High frequency facial - 699</li>
-        <li>Mesoelectroporation - 2000</li>
-        <li>Vampire facial - 5000</li>
-      </ul>
-    ),
+    question: "Do I need to confirm my appointment in advance?",
+    answer:
+      "Yes. Please message us on WhatsApp first so we can confirm availability and share the appointment details.",
   },
   {
-    question: "What advanced skin treatments are available?",
-    answer: (
-      <ul className="space-y-2">
-        <li>PRP face - 3500</li>
-        <li>Microneedling with serum - 3500</li>
-        <li>Microneedling with PRP/PDRN - 5000</li>
-        <li>MNRF - 5000</li>
-        <li>MNRF with PRP - 7000</li>
-      </ul>
-    ),
+    question: "Can I ask about prices before booking?",
+    answer:
+      "Yes. You can message us on WhatsApp and we will share the pricing details before your appointment.",
   },
   {
-    question: "Do you offer pigmentation and hair treatments?",
-    answer: (
-      <div className="space-y-4">
-        <ul className="space-y-2">
-          <li>Lip and other pigmentation - 3000</li>
-          <li>Freckles - 3500</li>
-          <li>Melasma - 4000</li>
-          <li>Underarm brightening - 3000</li>
-        </ul>
-        <ul className="space-y-2">
-          <li>PRP hair - 3500</li>
-          <li>GFC hair - 5000</li>
-          <li>Dandruff removal - 2000</li>
-        </ul>
-      </div>
-    ),
+    question: "How should I reach you to book?",
+    answer:
+      "WhatsApp is the easiest way to book. Send your name, preferred time, and the service you want.",
   },
   {
-    question: "What body contouring and skin correction services are available?",
-    answer: (
-      <ul className="space-y-2">
-        <li>RF face - 2500</li>
-        <li>RF body + cavitation - 3500</li>
-        <li>Mole / tag removal - 500</li>
-      </ul>
-    ),
+    question: "Can I pay after the appointment?",
+    answer:
+      "Yes. Payment is made after the service is completed.",
+  },
+  {
+    question: "What if I need to reschedule?",
+    answer:
+      "Just message us on WhatsApp as soon as possible and we will help you move the appointment.",
   },
 ];
 
