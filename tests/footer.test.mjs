@@ -21,6 +21,11 @@ for (const file of requiredFiles) {
 const layout = read("app/layout.tsx");
 assert.match(
   layout,
+  /suppressHydrationWarning/,
+  "Root html should suppress extension-injected attribute hydration warnings"
+);
+assert.match(
+  layout,
   /import\s+\{\s*SiteFooter\s*\}\s+from\s+["']@\/components\/SiteFooter["']/,
   "Root layout should import SiteFooter"
 );
