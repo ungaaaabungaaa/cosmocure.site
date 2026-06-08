@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost, Playfair_Display } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -23,8 +24,57 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Cosmocure",
-  description: "Cosmocure cosmetic salon.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: [
+    "Cosmocure",
+    "cosmetic salon",
+    "aesthetic clinic",
+    "nail salon",
+    "facial treatments",
+    "skin treatments",
+    "Arunachal Pradesh",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Cosmocure cosmetic salon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({

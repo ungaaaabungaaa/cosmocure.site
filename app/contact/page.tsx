@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: `Book an appointment or reach ${siteConfig.name}.`,
+};
+
 export default function ContactPage() {
   return (
     <main className="px-6 py-24 text-muted sm:py-32">

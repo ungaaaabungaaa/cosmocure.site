@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: `Read the privacy policy for ${siteConfig.name}.`,
+};
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="px-6 py-24 text-muted sm:py-32">

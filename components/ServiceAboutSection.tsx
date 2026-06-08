@@ -35,19 +35,19 @@ export function ServiceAboutSection() {
       <div className="mx-auto max-w-6xl">
         <div className="overflow-hidden bg-[#2a1f1d] px-6 py-16 text-[#f4eee7] sm:px-10 sm:py-20 lg:px-14 lg:py-24">
           <div className="relative">
-            <div className="grid gap-4 text-center sm:grid-cols-3 sm:gap-4">
+            <div className="grid grid-cols-3 gap-2 text-center sm:gap-4">
               {stats.map((stat) => (
-                <div key={stat.label} className="space-y-3">
-                  <p className="text-4xl leading-none text-[#f7f0ea] lg:text-6xl">
+                <div key={stat.label} className="space-y-2 sm:space-y-3">
+                  <p className="text-2xl leading-none text-[#f7f0ea] sm:text-4xl lg:text-6xl">
                     <NumberTicker
-                      className="font-display text-4xl leading-none text-[#f7f0ea] sm:text-6xl"
+                      className="font-display text-2xl leading-none text-[#f7f0ea] sm:text-4xl lg:text-6xl"
                       decimalPlaces={stat.decimalPlaces}
                       startValue={0}
                       value={stat.displayValue}
                     />
                     {stat.displaySuffix}
                   </p>
-                  <p className="text-sm uppercase tracking-[0.28em] text-[#c8a882] sm:text-base">
+                  <p className="text-[0.6rem] uppercase tracking-[0.24em] text-[#c8a882] sm:text-sm sm:tracking-[0.28em]">
                     {stat.label}
                   </p>
                 </div>
