@@ -5,8 +5,8 @@ const linkClass =
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 rounded-t-[22px] bg-[#2a1f1d] text-[#f7eee6]">
-      <div className="mx-auto max-w-7xl px-8 py-14 sm:px-12 lg:px-16">
+    <footer className="mt-16 bg-[#2a1f1d] text-[#f7eee6]">
+      <div className="mx-auto max-w-full px-8 py-14 sm:px-12 lg:px-16">
         <div className="grid gap-12 md:grid-cols-[1.5fr_0.7fr_0.8fr_0.9fr] md:items-start">
           <div>
             <Link
@@ -23,7 +23,7 @@ export function SiteFooter() {
           </div>
 
           <nav aria-label="Main footer links">
-            <h2 className="mb-4 text-[10px] font-semibold uppercase text-[#fff8ef]">
+            <h2 className="mb-4  font-semibold uppercase text-[#fff8ef]">
               Main
             </h2>
             <ul className="space-y-4">
@@ -41,7 +41,7 @@ export function SiteFooter() {
           </nav>
 
           <nav aria-label="Footer pages">
-            <h2 className="mb-4 text-[10px] font-semibold uppercase text-[#fff8ef]">
+            <h2 className="mb-4  font-semibold uppercase text-[#fff8ef]">
               Pages
             </h2>
             <ul className="space-y-4">
@@ -59,7 +59,7 @@ export function SiteFooter() {
           </nav>
 
           <nav aria-label="Social Media">
-            <h2 className="mb-4 text-[10px] font-semibold uppercase text-[#fff8ef]">
+            <h2 className="mb-4  font-semibold uppercase text-[#fff8ef]">
               Social Media
             </h2>
             <ul>

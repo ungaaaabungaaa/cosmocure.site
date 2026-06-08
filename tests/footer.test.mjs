@@ -7,6 +7,7 @@ const read = (file) => readFileSync(path.join(root, file), "utf8");
 
 const requiredFiles = [
   "components/SiteFooter.tsx",
+  "components/ContactSection.tsx",
   "app/page.tsx",
   "app/services/page.tsx",
   "app/contact/page.tsx",
@@ -69,3 +70,21 @@ assert.match(
 const home = read("app/page.tsx");
 assert.match(home, /Cosmocure Aesthetic Clinic/, "Home page should not be empty");
 assert.match(home, /Calm cosmetic care/, "Home page should include a visible hero heading");
+assert.match(
+  home,
+  /import\s+\{\s*ContactSection\s*\}\s+from\s+["']@\/components\/ContactSection["']/,
+  "Home page should import ContactSection"
+);
+assert.match(home, /<ContactSection\s*\/>/, "Home page should render ContactSection");
+
+const contactSection = read("components/ContactSection.tsx");
+for (const icon of ["Mail", "Phone", "MapPin"]) {
+  assert.match(contactSection, new RegExp(icon), `Contact section should use ${icon}`);
+}
+
+for (const label of ["Contact us", "Get In Touch", "Email", "Phone", "Office"]) {
+  assert.match(contactSection, new RegExp(label), `Contact section should include ${label}`);
+}
+
+const packageJson = read("package.json");
+assert.match(packageJson, /"lucide-react"/, "Project should depend on lucide-react");
