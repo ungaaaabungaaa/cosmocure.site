@@ -5,32 +5,32 @@ import { clinicContact } from "@/lib/contact";
 type Stat = {
   label: string;
   displayValue: number;
-  suffix?: string;
   decimalPlaces?: number;
+  displaySuffix?: string;
 };
 
 const stats: Stat[] = [
   {
     label: "Customers",
     displayValue: 5,
-    suffix: "K",
+    displaySuffix: "K",
   },
   {
     label: "Repeat",
     displayValue: 4.5,
     decimalPlaces: 1,
-    suffix: "K",
+    displaySuffix: "K",
   },
   {
     label: "Satisfaction",
-    suffix: "%",
     displayValue: 99,
+    displaySuffix: "%",
   },
 ];
 
 export function ServiceAboutSection() {
   return (
-    <div className="w-full bg-[#2a1f1d] max-w-[100%]">
+    <div className="w-full bg-[#2a1f1d]">
     <section className="px-6 py-24 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="overflow-hidden bg-[#2a1f1d] px-6 py-16 text-[#f4eee7] sm:px-10 sm:py-20 lg:px-14 lg:py-24">
@@ -38,14 +38,14 @@ export function ServiceAboutSection() {
             <div className="grid gap-4 text-center sm:grid-cols-3 sm:gap-4">
               {stats.map((stat) => (
                 <div key={stat.label} className="space-y-3">
-                  <p className="text-4xl lg:text-6xl leading-none text-[#f7f0ea]">
+                  <p className="text-4xl leading-none text-[#f7f0ea] lg:text-6xl">
                     <NumberTicker
                       className="font-display text-4xl leading-none text-[#f7f0ea] sm:text-6xl"
                       decimalPlaces={stat.decimalPlaces}
                       startValue={0}
-                      suffix={stat.suffix}
                       value={stat.displayValue}
                     />
+                    {stat.displaySuffix}
                   </p>
                   <p className="text-sm uppercase tracking-[0.28em] text-[#c8a882] sm:text-base">
                     {stat.label}
