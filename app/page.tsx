@@ -1,4 +1,5 @@
 import { ContactSection } from "@/components/ContactSection";
+import { GiftCardSection } from "@/components/GiftCardSection";
 import { FaqSection } from "@/components/FaqSection";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <GiftCardSection />
       <FaqSection />
       <ContactSection />
     </main>
