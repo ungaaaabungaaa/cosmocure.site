@@ -3,7 +3,7 @@ import { clinicContact } from "@/lib/contact";
 
 export function SiteNavBar() {
   return (
-    <section className="sticky top-0 z-50 px-1 pb-2 pt-0 sm:pb-10">
+    <section className="top-0 z-50 px-1 pb-2 pt-0 sm:pb-10">
       <div className="mx-auto max-w-full">
         <div className="flex items-center justify-between gap-4  px-6 py-5 sm:gap-6 sm:px-10 sm:py-6">
           <Link

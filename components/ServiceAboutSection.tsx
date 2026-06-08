@@ -31,11 +31,11 @@ const stats: Stat[] = [
 export function ServiceAboutSection() {
   return (
     <div className="w-full bg-[#2a1f1d]">
-    <section className="px-6 py-24 sm:py-24">
+    <section className="px-6 py-12 sm:py-12">
       <div className="mx-auto max-w-6xl">
         <div className="overflow-hidden bg-[#2a1f1d] px-6 py-16 text-[#f4eee7] sm:px-10 sm:py-20 lg:px-14 lg:py-24">
           <div className="relative">
-            <div className="grid grid-cols-3 gap-2 text-center sm:gap-4">
+            {/* <div className="grid grid-cols-3 gap-2 text-center sm:gap-4">
               {stats.map((stat) => (
                 <div key={stat.label} className="space-y-2 sm:space-y-3">
                   <p className="text-2xl leading-none text-[#f7f0ea] sm:text-4xl lg:text-6xl">
@@ -52,7 +52,7 @@ export function ServiceAboutSection() {
                   </p>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             <div className="mt-16 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
               <div className="max-w-xl lg:pl-8">
