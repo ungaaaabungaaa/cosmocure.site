@@ -4,11 +4,9 @@ import { clinicContact } from "@/lib/contact";
 
 type ServiceItem = {
   name: string;
-  price: string;
 };
 
 type ServiceBlock = {
-  description: string;
   imageAlt: string;
   imageSrc: string;
   items: ServiceItem[];
@@ -17,82 +15,46 @@ type ServiceBlock = {
 
 const serviceBlocks: ServiceBlock[] = [
   {
-    title: "Medi Facials",
-    description:
-      "Skin-focused facial care options for deep cleansing, glow, and refreshment.",
-    imageAlt: "Medi facials treatment",
-    imageSrc: "/MediFacials.jpg",
+    title: "Aesthetic Skin Care",
+    imageAlt: "Aesthetic skin care treatment",
+    imageSrc: "https://images.unsplash.com/photo-1731514771613-991a02407132?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     items: [
-      { name: "Hydrafacial + LED", price: "2000" },
-      { name: "Advanced hydrafacial", price: "3500" },
-      { name: "Chemical peel + LED", price: "2500" },
-      { name: "Carbon facial", price: "4000" },
-      { name: "Microdermabrasion crystal / diamond tip", price: "1000" },
-      { name: "Oxygeneo facial", price: "3000" },
-      { name: "High frequency facial", price: "699" },
-      { name: "Mesoelectroporation", price: "2000" },
-      { name: "Vampire facial", price: "5000" },
+      { name: "Acne & scar treatment" },
+      { name: "Pigmentation & melasma" },
+      { name: "Anti-aging programs" },
+      { name: "Medical facials & peels" },
+      { name: "Skin brightening & glow" },
+      { name: "Sensitive skin care" },
     ],
   },
   {
-    title: "Advanced Skin",
-    description:
-      "Advanced skin-focused treatments for smoother texture and visible refinement.",
-    imageAlt: "Advanced skin treatment",
-    imageSrc: "/AdvancedSkin.jpg",
+    title: "Hair & Scalp",
+    imageAlt: "Hair and scalp treatment",
+    imageSrc: "https://images.unsplash.com/photo-1742280159636-3a06652ac9d9?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     items: [
-      { name: "PRP face", price: "3500" },
-      { name: "Microneedling with serum", price: "3500" },
-      { name: "Microneedling with PRP / PDRN", price: "5000" },
-      { name: "MNRF", price: "5000" },
-      { name: "MNRF with PRP", price: "7000" },
+      { name: "Hair-fall control" },
+      { name: "Hair regrowth therapy" },
+      { name: "Scalp analysis" },
+      { name: "Dandruff treatment" },
+      { name: "Strengthening programs" },
+      { name: "Hair wellness coaching" },
     ],
   },
   {
-    title: "Pigmentation",
-    description:
-      "Targeted pigmentation care for lips, freckles, melasma, and underarms.",
-    imageAlt: "Pigmentation treatment",
-    imageSrc: "/Pigmentation.avif",
+    title: "Classical Homoeopathy",
+    imageAlt: "Classical homoeopathy consultation",
+    imageSrc: "/Homoeopathy.jpg",
     items: [
-      { name: "Lip and other pigmentation", price: "3000" },
-      { name: "Freckles", price: "3500" },
-      { name: "Melasma", price: "4000" },
-      { name: "Underarm brightening", price: "3000" },
+      { name: "Hormonal balance" },
+      { name: "Digestive disorders" },
+      { name: "Stress & anxiety" },
+      { name: "Women's health" },
+      { name: "Children's health" },
+      { name: "Immunity & lifestyle" },
     ],
-  },
-  {
-    title: "Hair Treatments",
-    description:
-      "Hair-focused treatments for strengthening, restoration, and scalp care.",
-    imageAlt: "Hair treatment",
-    imageSrc: "/HairTreatments.jpg",
-    items: [
-      { name: "PRP hair", price: "3500" },
-      { name: "GFC hair", price: "5000" },
-      { name: "Dandruff removal", price: "2000" },
-    ],
-  },
-  {
-    title: "Body Contouring",
-    description:
-      "Body contouring treatments designed for a cleaner, more sculpted feel.",
-    imageAlt: "Body contouring treatment",
-    imageSrc: "/BodyContouring.avif",
-    items: [
-      { name: "RF face", price: "2500" },
-      { name: "RF body + cavitation", price: "3500" },
-    ],
-  },
-  {
-    title: "Skin Correction",
-    description:
-      "Small correction treatments for unwanted tags and similar concerns.",
-    imageAlt: "Skin correction treatment",
-    imageSrc: "/SkinCorrection.avif",
-    items: [{ name: "Mole / tag removal", price: "500" }],
   },
 ];
+
 
 function ServiceImageView({
   alt,
@@ -137,21 +99,16 @@ export function ServicesSection() {
                     <h3 className="mt-3 font-display text-4xl font-bold leading-none text-espresso sm:text-5xl">
                       {block.title}
                     </h3>
-                    <p className="mt-5 max-w-xl text-base font-light leading-8 text-muted sm:text-lg">
-                      {block.description}
-                    </p>
                   </div>
 
-                  <ul className="space-y-3">
+                  <ul className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
                     {block.items.map((item) => (
                       <li
                         key={item.name}
-                        className="flex items-start justify-between gap-6 border-b border-caramel/20 pb-3 text-sm leading-6 text-espresso sm:text-base"
+                        className="flex items-start gap-3 text-base leading-7 text-espresso sm:text-lg sm:leading-8"
                       >
+                        <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-caramel" />
                         <span>{item.name}</span>
-                        <span className="shrink-0 font-medium">
-                          ₹{item.price}
-                        </span>
                       </li>
                     ))}
                   </ul>
