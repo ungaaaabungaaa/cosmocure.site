@@ -12,7 +12,13 @@ type ContactCard = {
 const contactCards: ContactCard[] = [
   {
     title: "Email",
-    description: "Our friendly team is here to help.",
+    description: (
+      <>
+        Our friendly team is here
+        <br />
+        to help.
+      </>
+    ),
     actionLabel: "Email",
     href: clinicContact.emailHref,
     icon: Mail,
@@ -32,7 +38,13 @@ const contactCards: ContactCard[] = [
   },
   {
     title: "Office",
-    description: "Come say hello at our clinic.",
+    description: (
+      <>
+        Come say hello
+        <br />
+        at our clinic.
+      </>
+    ),
     actionLabel: "Google Maps",
     href: clinicContact.mapsHref,
     icon: MapPin,
