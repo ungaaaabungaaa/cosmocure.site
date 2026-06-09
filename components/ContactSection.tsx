@@ -2,8 +2,8 @@ import { Mail, MapPin, Phone, type LucideIcon } from "lucide-react";
 import { clinicContact } from "@/lib/contact";
 
 type ContactCard = {
-  description: string;
-  detail: React.ReactNode;
+  description: React.ReactNode;
+  actionLabel: string;
   href: string;
   icon: LucideIcon;
   title: string;
@@ -13,29 +13,27 @@ const contactCards: ContactCard[] = [
   {
     title: "Email",
     description: "Our friendly team is here to help.",
-    detail: clinicContact.email,
+    actionLabel: "Email",
     href: clinicContact.emailHref,
     icon: Mail,
   },
   {
     title: "Phone",
-    description: "Open daily: 10 AM - 8 PM",
-    detail: clinicContact.phone,
+    description: (
+      <>
+        Monday - Friday: 10 AM - 8 PM
+        <br />
+        Sundays require appointment
+      </>
+    ),
+    actionLabel: "Call me",
     href: clinicContact.phoneHref,
     icon: Phone,
   },
   {
     title: "Office",
     description: "Come say hello at our clinic.",
-    detail: (
-      <>
-        {clinicContact.addressLines.map((line) => (
-          <span key={line} className="block">
-            {line}
-          </span>
-        ))}
-      </>
-    ),
+    actionLabel: "Google Maps",
     href: clinicContact.mapsHref,
     icon: MapPin,
   },
@@ -54,7 +52,8 @@ export function ContactSection() {
         </p>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {contactCards.map(({ description, detail, href, icon: Icon, title }) => (
+          {contactCards.map(
+            ({ actionLabel, description, href, icon: Icon, title }) => (
             <article
               key={title}
               className="rounded-[2.25rem] bg-white/70 px-6 py-10 shadow-[0_20px_60px_rgba(30,27,24,0.06)] backdrop-blur"
@@ -68,11 +67,12 @@ export function ContactSection() {
               <p className="mt-3 text-sm font-light leading-6">{description}</p>
               <a
                 href={href}
-                className="mx-auto mt-6 block max-w-56 text-sm font-semibold leading-6 text-espresso transition-colors hover:text-caramel"
+                className="mx-auto mt-8 block max-w-56 rounded-full bg-[#2a1f1d] px-6 py-3 text-center text-[#fff8ef] transition-colors hover:bg-[#3a2a27]"
+                aria-label={`${actionLabel}: ${title.toLowerCase()}`}
                 target={href === clinicContact.mapsHref ? "_blank" : undefined}
                 rel={href === clinicContact.mapsHref ? "noreferrer" : undefined}
               >
-                {detail}
+                {actionLabel}
               </a>
             </article>
           ))}

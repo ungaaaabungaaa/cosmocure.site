@@ -1,8 +1,4 @@
 import Link from "next/link";
-import { clinicContact } from "@/lib/contact";
-
-const linkClass =
-  "text-xs font-light text-[#f7eee6] transition-colors hover:text-gold";
 
 export function SiteFooter() {
   return (
@@ -12,18 +8,23 @@ export function SiteFooter() {
           <div>
             <Link
               href="/"
-              className="font-display text-5xl font-bold leading-none text-[#fff8ef] sm:text-6xl"
+              className="font-display text-2xl font-bold leading-none text-[#fff8ef] sm:text-6xl"
             >
               Cosmocure
             </Link>
-            <p className="mt-5 max-w-44 text-sm font-light leading-6 text-[#f7eee6]">
-              Heal Within Glow Beyound.
+            <p className="mt-4 max-w-xl text-md font-light leading-6 text-[#f7eee6]">
+              A sanctuary where evidence-based aesthetic medicine meets the
+              timeless wisdom of homoeopathy — guided by Dr. Higam Ete, BHMS,
+              FMC.
             </p>
           </div>
         </div>
 
         <div className="mt-14 border-t border-[#f7eee6]/75 pt-5">
-          <p className="text-xs font-light text-[#f7eee6]">© 2026</p>
+          <div className="flex flex-col gap-2 text-xs font-light text-[#f7eee6] sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 Cosmocure. All rights reserved.</p>
+            <p>Crafted with care · Dr. Higam Ete, BHMS, FMC</p>
+          </div>
         </div>
       </div>
     </footer>
