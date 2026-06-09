@@ -118,12 +118,6 @@ export function ServicesSection() {
   return (
     <section className="px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-3xl">
-          <h2 className="mt-4 font-display text-5xl font-bold leading-none text-espresso sm:text-7xl">
-            Services Offered.
-          </h2>
-        </div>
-
         <div className="mt-16 space-y-20 sm:space-y-28">
           {serviceBlocks.map((block, index) => {
             const imageFirst = index % 2 === 0;
