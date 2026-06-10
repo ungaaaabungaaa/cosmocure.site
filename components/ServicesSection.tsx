@@ -105,9 +105,9 @@ export function ServicesSection() {
                     {block.items.map((item) => (
                       <li
                         key={item.name}
-                        className="flex items-start gap-3 text-base leading-7 text-espresso sm:text-lg sm:leading-8"
+                        className="flex items-start gap-3 text-lg leading-8 text-espresso sm:text-xl sm:leading-9"
                       >
-                        <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-caramel" />
+                        <span className="mt-2 h-2 w-2 flex-none rounded-full bg-caramel" />
                         <span>{item.name}</span>
                       </li>
                     ))}
