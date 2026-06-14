@@ -36,10 +36,10 @@ export function Hero() {
           </Link>
         </div>
 
-        <div className=" p-4">
+        <div className="p-2">
           <div className="flex aspect-[4/5] items-center justify-center text-center">
           <img
-              src="/salon2.png"
+              src="/hero.png"
               alt="Cosmocure gift card"
               className="w-full max-w-[99%] object-cover"
             />
