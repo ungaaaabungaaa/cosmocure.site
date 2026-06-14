@@ -15,30 +15,74 @@ type ServiceBlock = {
 
 const serviceBlocks: ServiceBlock[] = [
   {
-    title: "Aesthetic Skin Care",
-    imageAlt: "Aesthetic skin care treatment",
-    imageSrc: "https://images.unsplash.com/photo-1731514771613-991a02407132?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "MEDI FACIALS",
+    imageAlt: "Aesthetic facial treatment",
+    imageSrc:
+      "https://images.unsplash.com/photo-1731514771613-991a02407132?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHwxaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     items: [
-      { name: "Acne & scar treatment" },
-      { name: "Pigmentation & melasma" },
-      { name: "Anti-aging programs" },
-      { name: "Medical facials & peels" },
-      { name: "Skin brightening & glow" },
-      { name: "Sensitive skin care" },
+      { name: "Hydrafacial + LED" },
+      { name: "Advanced hydrafacial" },
+      { name: "Chemical peel + LED" },
+      { name: "Carbon facial" },
+      { name: "Microdermabrasion crystal / diamond tip" },
+      { name: "Oxygeno facial" },
+      { name: "High frequency facial" },
+      { name: "Mesoelectroporation" },
+      { name: "Vampire facial" },
     ],
   },
   {
-    title: "Hair & Scalp",
-    imageAlt: "Hair and scalp treatment",
-    imageSrc: "https://images.unsplash.com/photo-1742280159636-3a06652ac9d9?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "ADVANCED SKIN",
+    imageAlt: "Advanced skin treatment",
+    imageSrc:
+      "https://images.unsplash.com/photo-1600959907703-54f8a4f9e6b1?q=80&w=1400&auto=format&fit=crop",
     items: [
-      { name: "Hair-fall control" },
-      { name: "Hair regrowth therapy" },
-      { name: "Scalp analysis" },
-      { name: "Dandruff treatment" },
-      { name: "Strengthening programs" },
-      { name: "Hair wellness coaching" },
+      { name: "Prp face" },
+      { name: "Microneedling with serum" },
+      { name: "Microneedling with prp/pdrn" },
+      { name: "MNRF" },
+      { name: "MNRF with prp" },
     ],
+  },
+  {
+    title: "PIGMENTATION",
+    imageAlt: "Pigmentation treatment",
+    imageSrc:
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=1400&auto=format&fit=crop",
+    items: [
+      { name: "Lip and other pigmentation" },
+      { name: "Freckles" },
+      { name: "Malesma" },
+      { name: "Underarm brightening" },
+    ],
+  },
+  {
+    title: "HAIR TREATMENTS",
+    imageAlt: "Hair treatment",
+    imageSrc:
+      "https://images.unsplash.com/photo-1621600411688-abc4d17f4d0b?q=80&w=1400&auto=format&fit=crop",
+    items: [
+      { name: "Prp hair" },
+      { name: "GFC hair" },
+      { name: "Dandruff removal" },
+    ],
+  },
+  {
+    title: "BODY CONTOURING",
+    imageAlt: "Body contouring treatment",
+    imageSrc:
+      "https://images.unsplash.com/photo-1598554747436-c929cecc7e83?q=80&w=1400&auto=format&fit=crop",
+    items: [
+      { name: "Rf face" },
+      { name: "Rf Body + cavitation" },
+    ],
+  },
+  {
+    title: "SKIN CORRECTION",
+    imageAlt: "Skin correction treatment",
+    imageSrc:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop",
+    items: [{ name: "Mole / Tag removal" }],
   },
   {
     title: "Classical Homoeopathy",
@@ -54,7 +98,6 @@ const serviceBlocks: ServiceBlock[] = [
     ],
   },
 ];
-
 
 function ServiceImageView({
   alt,
