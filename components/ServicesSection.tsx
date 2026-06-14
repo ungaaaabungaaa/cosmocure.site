@@ -18,7 +18,7 @@ const serviceBlocks: ServiceBlock[] = [
     title: "MEDI FACIALS",
     imageAlt: "Aesthetic facial treatment",
     imageSrc:
-      "https://images.unsplash.com/photo-1731514771613-991a02407132?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHwxaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1761718209852-54ca4210183e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     items: [
       { name: "Hydrafacial + LED" },
       { name: "Advanced hydrafacial" },
@@ -35,7 +35,7 @@ const serviceBlocks: ServiceBlock[] = [
     title: "ADVANCED SKIN",
     imageAlt: "Advanced skin treatment",
     imageSrc:
-      "https://images.unsplash.com/photo-1600959907703-54f8a4f9e6b1?q=80&w=1400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1731355771304-bc2f23167bea?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     items: [
       { name: "Prp face" },
       { name: "Microneedling with serum" },
@@ -48,7 +48,7 @@ const serviceBlocks: ServiceBlock[] = [
     title: "PIGMENTATION",
     imageAlt: "Pigmentation treatment",
     imageSrc:
-      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=1400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1733685372465-b828971f8c95?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     items: [
       { name: "Lip and other pigmentation" },
       { name: "Freckles" },
@@ -60,7 +60,7 @@ const serviceBlocks: ServiceBlock[] = [
     title: "HAIR TREATMENTS",
     imageAlt: "Hair treatment",
     imageSrc:
-      "https://images.unsplash.com/photo-1621600411688-abc4d17f4d0b?q=80&w=1400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1573651235591-221193be5229?q=80&w=1305&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     items: [
       { name: "Prp hair" },
       { name: "GFC hair" },
@@ -71,7 +71,7 @@ const serviceBlocks: ServiceBlock[] = [
     title: "BODY CONTOURING",
     imageAlt: "Body contouring treatment",
     imageSrc:
-      "https://images.unsplash.com/photo-1598554747436-c929cecc7e83?q=80&w=1400&auto=format&fit=crop",
+      "https://images.pexels.com/photos/33327683/pexels-photo-33327683.jpeg",
     items: [
       { name: "Rf face" },
       { name: "Rf Body + cavitation" },
@@ -81,7 +81,7 @@ const serviceBlocks: ServiceBlock[] = [
     title: "SKIN CORRECTION",
     imageAlt: "Skin correction treatment",
     imageSrc:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop",
+      "https://images.pexels.com/photos/30809947/pexels-photo-30809947.jpeg",
     items: [{ name: "Mole / Tag removal" }],
   },
   {
@@ -144,14 +144,13 @@ export function ServicesSection() {
                     </h3>
                   </div>
 
-                  <ul className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
+                  <ul className="grid gap-x-4 gap-y-0">
                     {block.items.map((item) => (
                       <li
                         key={item.name}
-                        className="flex items-start gap-3 text-lg leading-8 text-espresso sm:text-xl sm:leading-9"
+                        className="border-b border-espresso/10 py-3 text-lg leading-8 text-espresso last:border-b-0 sm:text-xl sm:leading-9"
                       >
-                        <span className="mt-2 h-2 w-2 flex-none rounded-full bg-caramel" />
-                        <span>{item.name}</span>
+                        {item.name}
                       </li>
                     ))}
                   </ul>
