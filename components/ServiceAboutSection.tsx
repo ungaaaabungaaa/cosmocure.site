@@ -85,7 +85,7 @@ export function ServiceAboutSection() {
               <div className="flex justify-center lg:justify-end">
                 <div className="overflow-hidden">
                   <img
-                    src="/salon.png"
+                    src="/salon2.png"
                     alt="Service About"
                     className="w-full max-w-[420px] object-cover"
                   />
