@@ -27,9 +27,9 @@ const contactCards: ContactCard[] = [
     title: "Phone",
     description: (
       <>
-        Monday - Friday: 10 AM - 8 PM
+        Monday - Saturday: 9 AM - 10 PM
         <br />
-        Sundays require appointment
+        Sunday by prior appointment
       </>
     ),
     actionLabel: "Call me",
