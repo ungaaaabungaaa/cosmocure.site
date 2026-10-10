@@ -33,4 +33,4 @@ Google documentation: https://developers.google.com/search/docs/appearance/struc
 - Under reduced motion, gallery slide indexes stayed unchanged over an eight-second check.
 - Desktop and 390 px mobile checks showed no horizontal overflow. Sunday hours were present on the mobile contact page.
 
-Publication, live deployment checks and search-engine account submissions remain pending local review and approval.
+The website changes were approved and pushed on 11 October 2026. Vercel reported a successful deployment. Google Search Console and Google Business Profile account submissions remain separate account-level tasks.

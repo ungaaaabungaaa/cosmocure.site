@@ -1,5 +1,6 @@
 "use client";
 
+import { BrandWordmark } from "@/components/BrandWordmark";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -103,7 +104,7 @@ export function SiteMotion() {
       <Image className="splash-flower splash-flower-right" src="/images/gold-cosmos.webp" width={400} height={600} alt="" />
       <div className="splash-content">
         <p className="splash-detail splash-eyebrow">A moment for yourself</p>
-        <p className="splash-brand font-display">Cosmocure</p>
+        <p className="splash-brand font-display"><BrandWordmark /></p>
         <p className="splash-detail splash-tagline">Heal Within, Glow Beyond</p>
         <div className="splash-rule" aria-hidden="true"><span /></div>
       </div>

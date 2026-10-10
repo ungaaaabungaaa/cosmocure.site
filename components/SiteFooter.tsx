@@ -1,3 +1,4 @@
+import { BrandWordmark } from "@/components/BrandWordmark";
 import Image from "next/image";
 import { clinicContact } from "@/lib/contact";
 import Link from "next/link";
@@ -13,7 +14,7 @@ export function SiteFooter() {
               href="/"
               className="font-display text-[1.9rem] font-bold leading-none text-[#fff8ef] sm:text-[2.6rem]"
             >
-              Cosmocure
+              <BrandWordmark />
             </Link>
             <p className="mt-4 max-w-xl text-md font-light leading-6 text-[#f7eee6]">
               A sanctuary where evidence-based aesthetic medicine meets the

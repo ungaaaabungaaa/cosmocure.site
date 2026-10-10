@@ -42,6 +42,6 @@ Separate transparent ornaments replace the full decorative border:
 - Footer: a small ivory/gold constellation.
 All generated with the built-in image tool, then saved as WebP. Prompts requested sparse line art, transparent backgrounds and no text or full borders.
 
-The mobile quick-contact pill has visible Call and Visit us labels, stays above the safe area and hides at the footer without an extra spacer. The side menu uses a native modal dialog for focus containment and Escape dismissal. Every image block has a distinct interval (7.1–19.3 seconds).
+The mobile quick-contact pill uses accessible Call and Directions icon links, stays above the safe area and hides at the footer without an extra spacer. The side menu uses a native modal dialog for focus containment and Escape dismissal. Every image block has a distinct interval (7.1–19.3 seconds).
 
-Rounded treatment photos also have small alternating orbit and constellation accents tucked behind their edges. The final pill labels are Call us and Visit us, in white with icons beside the labels and no border. Content headings use one shared responsive scale: H1 30.4/41.6px, H2 28/36px and H3 20/24px (mobile/desktop).
+Rounded treatment photos also have small alternating orbit and constellation accents tucked behind their edges. The final pill uses a white call icon with the label Call, a thin divider and an unlabelled location icon with an accessible name; no outer border. Content headings use one shared responsive scale: H1 30.4/41.6px, H2 28/36px and H3 20/24px (mobile/desktop).
