@@ -73,13 +73,12 @@ export function SiteMotion() {
       splash.focus({ preventScroll: true });
       document.addEventListener("keydown", onKey);
       // Never leave the website blocked if an animation is interrupted.
-      timer = setTimeout(finish, 5000);
+      timer = setTimeout(finish, 3500);
       intro = gsap.timeline({ onComplete: finish });
       intro.fromTo(splash.querySelector(".splash-brand"), { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "power3.out" }, 0)
         .fromTo(splash.querySelectorAll(".splash-detail"), { y: 8, opacity: 0 }, { y: 0, opacity: 1, duration: 0.65, stagger: 0.1 }, 0.2)
         .fromTo(splash.querySelectorAll(".splash-flower"), { opacity: 0, scale: 0.97 }, { opacity: 0.25, scale: 1, duration: 1.2, ease: "power2.out" }, 0)
-        .fromTo(splash.querySelector(".splash-rule span"), { scaleX: 0 }, { scaleX: 1, duration: 3.6, ease: "power1.inOut" }, 0.2)
-        .to(splash, { clipPath: "inset(0% 0% 100% 0%)", duration: 0.65, ease: "power3.inOut" }, 4);
+        .to(splash, { clipPath: "inset(0% 0% 100% 0%)", duration: 0.5, ease: "power3.inOut" }, 2.5);
     }
     motion.addEventListener("change", onMotionChange);
     return () => {
@@ -103,7 +102,6 @@ export function SiteMotion() {
         <p className="splash-detail splash-eyebrow">A moment for yourself</p>
         <p className="splash-brand font-display"><BrandWordmark /></p>
         <p className="splash-detail splash-tagline">Heal Within, Glow Beyond</p>
-        <div className="splash-rule" aria-hidden="true"><span /></div>
       </div>
       <p className="splash-detail splash-location">Aalo · Arunachal Pradesh</p>
     </div>
