@@ -73,7 +73,7 @@ export function ContactSection() {
               className="rounded-[2.25rem] bg-white/70 px-6 py-10 shadow-[0_20px_60px_rgba(30,27,24,0.06)] backdrop-blur"
             >
               <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-caramel text-white">
-                <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
+                <Icon aria-hidden="true" size={18} strokeWidth={1.8} className={title === "Phone" ? "call-attention" : undefined} />
               </div>
               <h3 className="mt-5 font-display text-espresso type-h3">
                 {title}

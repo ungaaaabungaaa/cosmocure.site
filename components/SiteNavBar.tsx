@@ -31,7 +31,7 @@ export function SiteNavBar() {
       <div className="flex items-center justify-between gap-4 px-6 py-4 sm:gap-6 sm:px-10 sm:py-6">
         <Link href="/" className="min-w-0 font-display text-[1.9rem] leading-none text-caramel sm:text-[2.6rem]"><BrandWordmark /></Link>
         <div className="hidden items-center gap-4 sm:flex">
-          <a href={clinicContact.phoneHref} className="inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm text-espresso"><Phone size={18} aria-hidden="true" />{clinicContact.phone}</a>
+          <a href={clinicContact.phoneHref} className="inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm text-espresso"><Phone size={18} aria-hidden="true" className="call-attention" />{clinicContact.phone}</a>
           <a href={clinicContact.whatsappHref} target="_blank" rel="noreferrer" className="rounded-full bg-[#2a1f1d] px-7 py-4 text-sm tracking-[0.16em] text-[#fff8ef]">Book Consultation</a>
         </div>
         <button type="button" className="flex h-11 w-11 items-center justify-center text-espresso sm:hidden" aria-label="Open menu" aria-expanded={isOpen} aria-controls="mobile-navigation" onClick={() => { dialog.current?.showModal(); setIsOpen(true); }}><Menu size={25} aria-hidden="true" /></button>
@@ -51,7 +51,7 @@ export function SiteNavBar() {
             <p className="text-xs leading-6 text-muted">{clinicHours.weekdays}<br />{clinicHours.sunday}</p>
             <a href={clinicContact.whatsappHref} target="_blank" rel="noreferrer" onClick={closeMenu} className="mt-5 block rounded-full bg-[#2a1f1d] px-5 py-3 text-center text-sm text-[#fff8ef]">Book Consultation</a>
             <div className="mt-3 grid grid-cols-2 gap-2">
-              <a href={clinicContact.phoneHref} onClick={closeMenu} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-caramel/30 text-sm"><Phone size={16} aria-hidden="true" />Call</a>
+              <a href={clinicContact.phoneHref} onClick={closeMenu} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-caramel/30 text-sm"><Phone size={16} aria-hidden="true" className="call-attention" />Call</a>
               <a href={clinicContact.mapsHref} target="_blank" rel="noreferrer" onClick={closeMenu} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-caramel/30 text-sm"><MapPin size={16} aria-hidden="true" />Directions</a>
             </div>
           </div>

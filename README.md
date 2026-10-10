@@ -10,7 +10,7 @@ Skin, hair and aesthetic care in Aalo, Arunachal Pradesh.
 
 - Paper texture, gold floral and celestial drawings, and varied image frames.
 - A distinct WebP image set for every treatment block, with gentle automatic changes and no play/pause buttons.
-- A short GSAP welcome screen, a skip option and restrained page reveals. Reduced-motion settings are respected.
+- A 4-second GSAP welcome screen, a skip option and restrained page reveals. Reduced-motion settings are respected.
 - Mobile side navigation, compact Call us / Visit us controls, and consistent heading sizes.
 - Sunday hours: **9 AM–7 PM**. Monday–Saturday: **9 AM–10 PM**.
 - Page-specific search metadata, clinic structured data, sitemap and PNG social-sharing image.

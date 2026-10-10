@@ -29,7 +29,7 @@ export function Hero() {
             <span aria-hidden="true" className="flex h-5 w-5 items-center justify-center">
               <svg
                 viewBox="0 0 24 24"
-                className="h-5 w-5 fill-none stroke-current stroke-[1.8]"
+                className="call-attention h-5 w-5 fill-none stroke-current stroke-[1.8]"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
