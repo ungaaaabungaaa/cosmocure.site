@@ -45,12 +45,14 @@ export function SiteMotion() {
       finished = true;
       clearTimeout(timer);
       intro?.kill();
+      const restorePreviousFocus = document.activeElement === splash;
+      if (restorePreviousFocus) splash.blur();
       splash.style.display = "none";
       site.inert = false;
       document.documentElement.style.overflow = "";
-      if (document.activeElement === splash) {
-        if (previousFocus && previousFocus !== document.body) previousFocus.focus({ preventScroll: true });
-        else site.querySelector<HTMLElement>("a")?.focus({ preventScroll: true });
+      // Restore an existing interaction, but never focus the logo on page load.
+      if (restorePreviousFocus && previousFocus?.isConnected && previousFocus !== document.body && previousFocus !== document.documentElement) {
+        previousFocus.focus({ preventScroll: true });
       }
       animatePage();
     };
