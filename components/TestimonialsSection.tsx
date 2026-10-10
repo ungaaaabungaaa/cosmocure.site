@@ -93,7 +93,7 @@ export function TestimonialsSection() {
               <p className="font-body text-sm uppercase tracking-[0.34em] text-[#c8a882]">
                 Testimonials
               </p>
-              <h2 className="mt-7 max-w-sm font-display text-5xl font-bold leading-none text-[#f7f0ea] sm:text-6xl lg:text-[4.6rem]">
+              <h2 className="mt-7 max-w-sm font-display text-[#f7f0ea] type-h2">
                 What Our Clients Say
               </h2>
             </div>

@@ -46,13 +46,13 @@ const faqItems = [
 
 export function FaqSection() {
   return (
-    <section className="px-6 py-24 text-muted sm:py-32">
+    <section id="faq" className="px-6 py-24 text-muted sm:py-32">
       <div className="mx-auto max-w-5xl">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-body text-sm uppercase tracking-[0.28em] text-caramel">
             FAQ
           </p>
-          <h2 className="mt-4 font-display text-5xl font-bold leading-none text-espresso sm:text-7xl">
+          <h2 className="mt-4 font-display text-espresso type-h2">
             Have Questions?
           </h2>
           <p className="mt-6 text-base font-light leading-8 text-muted sm:text-lg">

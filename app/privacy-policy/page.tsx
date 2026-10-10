@@ -1,20 +1,18 @@
-import type { Metadata } from "next";
 
-import { siteConfig } from "@/lib/site";
+import { CelestialAccent } from "@/components/CelestialAccent";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: `Read the privacy policy for ${siteConfig.name}.`,
-};
+export const metadata = pageMetadata('Privacy Policy', 'Read how Cosmocure handles information when you browse the website, contact the clinic or book an appointment.', "/privacy-policy");
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="px-6 py-24 text-muted sm:py-32">
+    <main className="relative px-6 py-10 text-muted sm:py-20">
+      <CelestialAccent variant="orbit" className="right-5 top-2 sm:right-12" />
       <section className="mx-auto max-w-4xl">
         <p className="mb-4 font-body text-sm uppercase text-caramel">
           Privacy Policy
         </p>
-        <h1 className="font-display text-5xl font-bold leading-tight text-espresso sm:text-6xl">
+        <h1 className="font-display text-espresso type-h1">
           Privacy Policy
         </h1>
         <div className="mt-8 space-y-8 text-base font-light leading-8">
@@ -25,7 +23,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               1. Information We Collect
             </h2>
             <p>
@@ -43,7 +41,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               2. How We Use Your Information
             </h2>
             <p>
@@ -59,7 +57,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               3. How We Share Information
             </h2>
             <p>
@@ -76,7 +74,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               4. Cookies and Analytics
             </h2>
             <p>
@@ -92,7 +90,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               5. Data Retention
             </h2>
             <p>
@@ -107,7 +105,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               6. Data Security
             </h2>
             <p>
@@ -119,7 +117,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               7. Third-Party Links and Services
             </h2>
             <p>
@@ -131,7 +129,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               8. Your Choices and Rights
             </h2>
             <p>
@@ -146,7 +144,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               9. Children&apos;s Privacy
             </h2>
             <p>
@@ -157,7 +155,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               10. Changes To This Policy
             </h2>
             <p>
@@ -168,7 +166,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="space-y-4 border-t border-caramel/20 pt-6">
-            <h2 className="font-display text-2xl font-bold text-espresso">
+            <h2 className="font-display text-espresso type-h2">
               Contact Us
             </h2>
             <p>

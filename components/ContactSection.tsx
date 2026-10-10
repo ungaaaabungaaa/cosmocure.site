@@ -1,5 +1,6 @@
+import { CelestialAccent } from "@/components/CelestialAccent";
 import { Mail, MapPin, Phone, type LucideIcon } from "lucide-react";
-import { clinicContact } from "@/lib/contact";
+import { clinicContact, clinicHours } from "@/lib/contact";
 
 type ContactCard = {
   description: React.ReactNode;
@@ -27,9 +28,9 @@ const contactCards: ContactCard[] = [
     title: "Phone",
     description: (
       <>
-        Monday - Saturday: 9 AM - 10 PM
+        {clinicHours.weekdays}
         <br />
-        Sunday by prior appointment
+        {clinicHours.sunday}
       </>
     ),
     actionLabel: "Call me",
@@ -53,10 +54,11 @@ const contactCards: ContactCard[] = [
 
 export function ContactSection() {
   return (
-    <section className="px-6 py-20 text-center text-muted sm:py-24">
+    <section data-reveal className="relative px-6 py-20 text-center text-muted sm:py-24">
+      <CelestialAccent variant="moon" className="left-5 top-5 sm:left-12" />
       <div className="relative mx-auto max-w-6xl">
         <p className="font-body text-sm text-caramel">Contact us</p>
-        <h2 className="mt-2 font-display text-4xl font-bold leading-tight text-espresso sm:text-5xl">
+        <h2 className="mt-2 font-display text-espresso type-h2">
           Get In Touch
         </h2>
         <p className="mt-4 text-sm font-light text-muted">
@@ -73,7 +75,7 @@ export function ContactSection() {
               <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-caramel text-white">
                 <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
               </div>
-              <h3 className="mt-5 font-display text-2xl font-bold text-espresso">
+              <h3 className="mt-5 font-display text-espresso type-h3">
                 {title}
               </h3>
               <p className="mt-3 text-sm font-light leading-6">{description}</p>

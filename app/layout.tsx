@@ -1,5 +1,9 @@
+import { MobileQuickActions } from "@/components/MobileQuickActions";
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost, Playfair_Display } from "next/font/google";
+import { ClinicStructuredData } from "@/components/ClinicStructuredData";
+import { SiteNavBar } from "@/components/SiteNavBar";
+import { SiteMotion } from "@/components/SiteMotion";
 import { SiteFooter } from "@/components/SiteFooter";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -26,7 +30,7 @@ const jost = Jost({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: "Cosmocure | Skin & Aesthetic Clinic in Aalo",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -105,8 +109,14 @@ export default function RootLayout({
       className={`${playfair.variable} ${cormorant.variable} ${jost.variable} h-full`}
     >
       <body className="flex min-h-full flex-col font-body text-muted">
+        <ClinicStructuredData />
+        <SiteMotion />
+        <div id="site-content" className="flex min-h-screen flex-col">
+        <SiteNavBar />
         <div className="flex-1">{children}</div>
         <SiteFooter />
+        <MobileQuickActions />
+        </div>
       </body>
     </html>
   );

@@ -1,65 +1,24 @@
 import Link from "next/link";
-import { NumberTicker } from "@/components/ui/number-ticker";
+import { FloralAccent } from "@/components/FloralAccent";
+import { ImageCycle } from "@/components/ImageCycle";
+import { careStillLife } from "@/lib/images";
 import { clinicContact } from "@/lib/contact";
-
-type Stat = {
-  label: string;
-  displayValue: number;
-  decimalPlaces?: number;
-  displaySuffix?: string;
-};
-
-const stats: Stat[] = [
-  {
-    label: "Customers",
-    displayValue: 5,
-    displaySuffix: "K",
-  },
-  {
-    label: "Repeat",
-    displayValue: 4.5,
-    decimalPlaces: 1,
-    displaySuffix: "K",
-  },
-  {
-    label: "Satisfaction",
-    displayValue: 99,
-    displaySuffix: "%",
-  },
-];
 
 export function ServiceAboutSection() {
   return (
     <div className="w-full bg-[#2a1f1d]">
-    <section className="px-6 py-12 sm:py-12">
+    <section data-reveal className="px-6 py-12 sm:py-12">
       <div className="mx-auto max-w-6xl">
-        <div className="overflow-hidden bg-[#2a1f1d] px-6 py-16 text-[#f4eee7] sm:px-10 sm:py-20 lg:px-14 lg:py-24">
+        <div className="bg-[#2a1f1d] py-6 text-[#f4eee7] sm:py-12">
           <div className="relative">
-            {/* <div className="grid grid-cols-3 gap-2 text-center sm:gap-4">
-              {stats.map((stat) => (
-                <div key={stat.label} className="space-y-2 sm:space-y-3">
-                  <p className="text-2xl leading-none text-[#f7f0ea] sm:text-4xl lg:text-6xl">
-                    <NumberTicker
-                      className="font-display text-2xl leading-none text-[#f7f0ea] sm:text-4xl lg:text-6xl"
-                      decimalPlaces={stat.decimalPlaces}
-                      startValue={0}
-                      value={stat.displayValue}
-                    />
-                    {stat.displaySuffix}
-                  </p>
-                  <p className="text-[0.6rem] uppercase tracking-[0.24em] text-[#c8a882] sm:text-sm sm:tracking-[0.28em]">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div> */}
 
-            <div className="mt-16 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
-              <div className="max-w-xl lg:pl-8">
+
+            <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
+              <div className="max-w-xl">
                 <p className="font-body text-sm uppercase tracking-[0.28em] text-[#c8a882]">
                   Book Now
                 </p>
-                <h2 className="mt-4 max-w-xl font-display text-5xl font-bold leading-none text-[#f7f0ea] sm:text-6xl lg:text-[4.75rem]">
+                <h2 className="mt-4 max-w-xl font-display text-[#f7f0ea] type-h2">
                   Services
                 </h2>
                 <p className="mt-8 max-w-xl text-base font-light leading-8 text-[#f4eee7]/90 sm:text-lg">
@@ -82,14 +41,9 @@ export function ServiceAboutSection() {
                 </Link>
               </div>
 
-              <div className="flex justify-center lg:justify-end">
-                <div className="overflow-hidden">
-                  <img
-                    src="/salon2.png"
-                    alt="Service About"
-                    className="w-full max-w-[420px] object-cover"
-                  />
-                </div>
+              <div className="relative isolate mx-auto aspect-[530/507] w-full max-w-[530px]" data-service-artwork>
+                <FloralAccent variant="service" />
+                <ImageCycle intervalMs={9700} images={[{src: "/salon2.webp", alt: "Facial care in the original curved photo frame"}, careStillLife]} artwork={{aspectRatio: "442 / 663", photoWindow: {inset: 0}}} className="absolute! bottom-0 right-[16%] w-[55%]!" />
               </div>
             </div>
           </div>

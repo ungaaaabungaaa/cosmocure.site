@@ -1,19 +1,17 @@
-import type { Metadata } from "next";
 
+import { CelestialAccent } from "@/components/CelestialAccent";
 import { ServicesSection } from "@/components/ServicesSection";
-import { siteConfig } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 import { ServiceAboutSection } from "@/components/ServiceAboutSection";
 import { ContactSection } from "@/components/ContactSection";
 import { FaqSection } from "@/components/FaqSection";
 
-export const metadata: Metadata = {
-  title: "Services",
-  description: `${siteConfig.name} services and treatment menu.`,
-};
+export const metadata = pageMetadata('Skin, Hair & Facial Treatments in Aalo', 'Explore medi facials, advanced skin care, pigmentation, hair treatments and consultations at Cosmocure in Aalo, Arunachal Pradesh.', "/services");
 
 export default function ServicesPage() {
   return (
     <main className="text-muted">
+      <h1 className="mx-auto max-w-6xl px-6 pb-8 pt-7 font-display sm:pb-12 sm:pt-12 text-espresso type-h1">Skin, Hair &amp; Aesthetic Treatments in Aalo</h1>
       <ServiceAboutSection />
       <ServicesSection />
       <section className="px-6 pb-24 sm:pb-32">
@@ -23,7 +21,7 @@ export default function ServicesPage() {
               <p className="font-body text-sm uppercase tracking-[0.24em] text-[#9a7556]">
                 The Founder
               </p>
-              <h2 className="max-w-xl font-display text-4xl font-bold leading-none text-[#2a1f1d] sm:text-5xl">
+              <h2 className="max-w-xl font-display text-[#2a1f1d] type-h2">
                 Dr. Higam Ete
               </h2>
               <p className="text-base leading-8 text-[#483b33] sm:text-lg">
@@ -67,15 +65,12 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            <div className="ml-auto flex h-full w-full items-center justify-center">
-              <div className="aspect-[4/5] w-full max-w-[380px] rounded-[2rem] border border-dashed border-[#d4b9a0] bg-[#fff8ef] text-[#8d7057]">
-                <div className="flex h-full items-center justify-center text-center">
-                  <p className="font-body text-xs uppercase tracking-[0.2em]">
-                    Founder photo placeholder
-                  </p>
-                </div>
-              </div>
-            </div>
+            <aside className="relative rounded-[2rem] border border-[#d4b9a0]/50 bg-[#fff8ef]/60 p-8 sm:p-12">
+              <CelestialAccent variant="moon" className="right-6 top-6" />
+              <p className="max-w-xs pt-16 font-display type-h3 text-espresso">Care that begins with a conversation.</p>
+              <p className="mt-5 text-base leading-8">Speak with the clinic about your concerns, treatment options, and appointment availability.</p>
+              <a href="/contact" className="mt-7 inline-flex rounded-full bg-[#2a1f1d] px-6 py-3 text-sm text-[#fff8ef]">Plan your visit</a>
+            </aside>
           </div>
         </div>
       </section>

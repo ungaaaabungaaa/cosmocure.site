@@ -1,18 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.pexels.com",
-      },
-    ],
-  },
+  // Photos and artwork are compressed in the repository. Serve them directly.
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

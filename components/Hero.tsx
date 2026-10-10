@@ -1,20 +1,24 @@
+import { CelestialAccent } from "@/components/CelestialAccent";
+import { ImageCycle } from "@/components/ImageCycle";
+import { skinPortrait } from "@/lib/images";
 import Link from "next/link";
 import { clinicContact } from "@/lib/contact";
 
 export function Hero() {
   return (
-    <section id="hero" className="px-6 py-20 sm:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+    <section id="hero" className="relative px-6 pb-12 pt-5 sm:py-28">
+      <CelestialAccent variant="moon" className="right-6 top-3 hidden sm:block" />
+      <div className="mx-auto grid max-w-6xl gap-8 sm:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div className="max-w-2xl space-y-6">
         
-          <h2 className="font-display text-5xl font-bold leading-none text-espresso sm:text-7xl">
+          <h1 className="font-display text-espresso type-h1">
             Heal Within, Glow Beyond
-          </h2>
+          </h1>
 
           <p className="max-w-xl text-base font-light leading-8 text-muted sm:text-lg">
-            A simple hero space ready for your photo. Keep the layout minimal,
-            let the image lead, and use this section for a quiet first
-            impression.
+            Skin, hair, and aesthetic care in Aalo. Explore medi facials,
+            skin treatments, and personal consultations at Cosmocure,
+            behind General Hospital in West Siang.
           </p>
 
           <Link
@@ -36,15 +40,7 @@ export function Hero() {
           </Link>
         </div>
 
-        <div className="p-2">
-          <div className="flex aspect-[4/5] items-center justify-center text-center">
-          <img
-              src="/hero.png"
-              alt="Cosmocure gift card"
-              className="w-full max-w-[99%] object-cover"
-            />
-          </div>
-        </div>
+        <ImageCycle images={[{src: "/hero.webp", alt: "Skincare portrait framed by the original flower drawings"}, skinPortrait]} priority artwork={{aspectRatio: "530 / 507", floralFrame: "hero", clip: "inset(15% 17% 0 30% round 42% 0 42% 0)", photoWindow: {left: "29.3%", top: "14.6%", width: "54%", height: "85.4%", borderRadius: "45% 0 45% 0 / 30% 0 30% 0"}}} />
       </div>
     </section>
   );

@@ -10,3 +10,12 @@ export const clinicContact = {
   phone: "8794201743",
   phoneHref: "tel:+918794201743",
 };
+
+export const clinicHours = {
+  weekdays: "Monday - Saturday: 9 AM - 10 PM",
+  sunday: "Sunday: 9 AM - 7 PM",
+  specifications: [
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "22:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "09:00", closes: "19:00" },
+  ],
+};

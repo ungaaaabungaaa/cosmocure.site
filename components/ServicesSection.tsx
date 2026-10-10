@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { CelestialAccent } from "@/components/CelestialAccent";
+import { ImageCycle, type CycleImage } from "@/components/ImageCycle";
+import { hairPortrait } from "@/lib/images";
 import Link from "next/link";
 import { clinicContact } from "@/lib/contact";
 
@@ -7,8 +10,7 @@ type ServiceItem = {
 };
 
 type ServiceBlock = {
-  imageAlt: string;
-  imageSrc: string;
+  images: CycleImage[];
   items: ServiceItem[];
   title: string;
 };
@@ -16,9 +18,10 @@ type ServiceBlock = {
 const serviceBlocks: ServiceBlock[] = [
   {
     title: "MEDI FACIALS",
-    imageAlt: "Aesthetic facial treatment",
-    imageSrc:
-      "https://images.unsplash.com/photo-1761718209852-54ca4210183e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    images: [
+      { src: "/images/medi-facial.webp", alt: "Illustrative facial care with a soft mask brush" },
+      { src: "/images/medi-facials-original.webp", alt: "Gentle facial massage during a skincare appointment" },
+    ],
     items: [
       { name: "Hydrafacial + LED" },
       { name: "Advanced hydrafacial" },
@@ -33,9 +36,10 @@ const serviceBlocks: ServiceBlock[] = [
   },
   {
     title: "ADVANCED SKIN",
-    imageAlt: "Advanced skin treatment",
-    imageSrc:
-      "https://images.unsplash.com/photo-1731355771304-bc2f23167bea?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    images: [
+      { src: "/images/advanced-skin.webp", alt: "Illustrative advanced skin-care instruments and serum ampoules" },
+      { src: "/images/advanced-skin-original.webp", alt: "A facial mask applied during a skin treatment" },
+    ],
     items: [
       { name: "Prp face" },
       { name: "Microneedling with serum" },
@@ -46,21 +50,23 @@ const serviceBlocks: ServiceBlock[] = [
   },
   {
     title: "PIGMENTATION",
-    imageAlt: "Pigmentation treatment",
-    imageSrc:
-      "https://images.unsplash.com/photo-1733685372465-b828971f8c95?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    images: [
+      { src: "/images/pigmentation-care.webp", alt: "Illustrative close-up of naturally pigmented skin during a mirror check" },
+      { src: "/images/pigmentation-original.webp", alt: "Portrait showing natural freckles and skin pigmentation" },
+    ],
     items: [
       { name: "Lip and other pigmentation" },
       { name: "Freckles" },
-      { name: "Malesma" },
+      { name: "Melasma" },
       { name: "Underarm brightening" },
     ],
   },
   {
     title: "HAIR TREATMENTS",
-    imageAlt: "Hair treatment",
-    imageSrc:
-      "https://images.unsplash.com/photo-1573651235591-221193be5229?q=80&w=1305&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    images: [
+      { src: "/images/scalp-care.webp", alt: "Illustrative hair and scalp examination with an inspection camera" },
+      hairPortrait,
+    ],
     items: [
       { name: "Prp hair" },
       { name: "GFC hair" },
@@ -69,9 +75,10 @@ const serviceBlocks: ServiceBlock[] = [
   },
   {
     title: "BODY CONTOURING",
-    imageAlt: "Body contouring treatment",
-    imageSrc:
-      "https://images.pexels.com/photos/33327683/pexels-photo-33327683.jpeg",
+    images: [
+      { src: "/images/body-contouring.webp", alt: "Illustrative radiofrequency and ultrasound body-care applicators" },
+      { src: "/images/body-care.webp", alt: "Illustrative body-care consultation setup with a wooden figure and clipboard" },
+    ],
     items: [
       { name: "Rf face" },
       { name: "Rf Body + cavitation" },
@@ -79,15 +86,18 @@ const serviceBlocks: ServiceBlock[] = [
   },
   {
     title: "SKIN CORRECTION",
-    imageAlt: "Skin correction treatment",
-    imageSrc:
-      "https://images.pexels.com/photos/30809947/pexels-photo-30809947.jpeg",
+    images: [
+      { src: "/images/skin-assessment.webp", alt: "Illustrative examination of a skin mark with a dermatoscope" },
+      { src: "/images/skin-correction-original.webp", alt: "Close-up of skin during a clinic appointment" },
+    ],
     items: [{ name: "Mole / Tag removal" }],
   },
   {
     title: "Classical Homoeopathy",
-    imageAlt: "Classical homoeopathy consultation",
-    imageSrc: "/Homoeopathy.jpg",
+    images: [
+      { src: "/images/homoeopathy-consultation.webp", alt: "Illustrative homoeopathy consultation desk with a vial and notebook" },
+      { src: "/images/homoeopathy.webp", alt: "Classical homoeopathy consultation illustration" },
+    ],
     items: [
       { name: "Hormonal balance" },
       { name: "Digestive disorders" },
@@ -99,29 +109,10 @@ const serviceBlocks: ServiceBlock[] = [
   },
 ];
 
-function ServiceImageView({
-  alt,
-  src,
-}: {
-  alt: string;
-  src: string;
-}) {
-  return (
-    <div className="relative aspect-[4/5] overflow-hidden rounded-[2.25rem] shadow-[0_24px_70px_rgba(30,27,24,0.08)]">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
-        sizes="(min-width: 1024px) 40vw, 100vw"
-      />
-    </div>
-  );
-}
-
 export function ServicesSection() {
   return (
-    <section className="px-6 py-24 sm:py-32">
+    <section className="relative px-6 py-24 sm:py-32">
+      <CelestialAccent variant="orbit" className="left-6 top-8 sm:left-12 sm:top-12" />
       <div className="mx-auto max-w-6xl">
         <div className="mt-16 space-y-20 sm:space-y-28">
           {serviceBlocks.map((block, index) => {
@@ -129,6 +120,7 @@ export function ServicesSection() {
 
             return (
               <article
+                data-reveal
                 key={block.title}
                 className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center"
               >
@@ -139,9 +131,9 @@ export function ServicesSection() {
                     <p className="font-body text-sm uppercase tracking-[0.22em] text-caramel">
                       {String(index + 1).padStart(2, "0")}
                     </p>
-                    <h3 className="mt-3 font-display text-4xl font-bold leading-none text-espresso sm:text-5xl">
+                    <h2 className="mt-3 font-display text-espresso type-h2">
                       {block.title}
-                    </h3>
+                    </h2>
                   </div>
 
                   <ul className="grid gap-x-4 gap-y-0">
@@ -165,8 +157,9 @@ export function ServicesSection() {
                   </Link>
                 </div>
 
-                <div className={imageFirst ? "lg:order-1" : "lg:order-2"}>
-                  <ServiceImageView alt={block.imageAlt} src={block.imageSrc} />
+                <div className={`relative isolate px-3 py-5 sm:px-5 ${imageFirst ? "lg:order-1" : "lg:order-2"}`}>
+                  <Image src={index % 2 === 0 ? "/images/treatment-orbit.webp" : "/images/footer-stars.webp"} alt="" width={160} height={110} className={`pointer-events-none absolute w-24 opacity-65 sm:w-32 ${imageFirst ? "-right-1 -top-2 rotate-[18deg]" : "-left-1 -bottom-2 -rotate-[25deg]"}`} />
+                  <ImageCycle images={block.images} intervalMs={8300 + index * 1370} />
                 </div>
               </article>
             );

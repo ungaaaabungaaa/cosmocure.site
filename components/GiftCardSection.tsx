@@ -1,12 +1,16 @@
+import { CelestialAccent } from "@/components/CelestialAccent";
+import { ImageCycle } from "@/components/ImageCycle";
+
 export function GiftCardSection() {
   return (
-    <section className="px-6 h-auto py-24 sm:py-32">
+    <section id="gift-cards" data-reveal className="relative px-6 h-auto py-24 sm:py-32">
+      <CelestialAccent className="right-6 top-6 sm:right-12" />
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div className="max-w-xl">
           <p className="font-body text-sm uppercase tracking-[0.28em] text-caramel">
             Gift Card
           </p>
-          <h2 className="mt-4 font-display text-5xl font-bold leading-none text-espresso sm:text-7xl">
+          <h2 className="mt-4 font-display text-espresso type-h2">
             Gift Card
           </h2>
           <p className="mt-6 text-base font-light leading-8 text-muted sm:text-lg">
@@ -18,15 +22,7 @@ export function GiftCardSection() {
           </p>
         </div>
 
-        <div className="flex justify-center lg:justify-end">
-          <div className="overflow-hidden">
-            <img
-              src="/giftcard.png"
-              alt="Cosmocure gift card"
-              className="w-full max-w-[99%] object-cover"
-            />
-          </div>
-        </div>
+        <ImageCycle intervalMs={19300} images={[{ src: "/giftcard.webp", alt: "Cosmocure gift card" }, { src: "/images/beauty-gift.webp", alt: "Illustrative beauty gift with a cream envelope, satin ribbon and manicured hands" }]} artwork={{aspectRatio: "607 / 560", floralFrame: "gift", clip: "inset(6% 22.3% 0 20.2% round 50% 50% 0 0 / 34% 34% 0 0)", photoWindow: {left: "20.2%", top: "6%", width: "57.5%", height: "94%", borderRadius: "50% 50% 0 0 / 34% 34% 0 0"}}} />
       </div>
     </section>
   );
