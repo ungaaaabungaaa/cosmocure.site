@@ -25,7 +25,6 @@ export function SiteMotion() {
     let intro: gsap.core.Timeline | undefined;
     const animations: gsap.core.Tween[] = [];
     const previousFocus = document.activeElement as HTMLElement | null;
-    const skip = splash.querySelector<HTMLButtonElement>("button");
 
     const animatePage = () => {
       if (motion.matches) return;
@@ -49,7 +48,7 @@ export function SiteMotion() {
       splash.style.display = "none";
       site.inert = false;
       document.documentElement.style.overflow = "";
-      if (document.activeElement === skip) {
+      if (document.activeElement === splash) {
         if (previousFocus && previousFocus !== document.body) previousFocus.focus({ preventScroll: true });
         else site.querySelector<HTMLElement>("a")?.focus({ preventScroll: true });
       }
@@ -71,8 +70,7 @@ export function SiteMotion() {
       splash.style.display = "grid";
       site.inert = true;
       document.documentElement.style.overflow = "hidden";
-      skip?.focus({ preventScroll: true });
-      skip?.addEventListener("click", finish);
+      splash.focus({ preventScroll: true });
       document.addEventListener("keydown", onKey);
       // Never leave the website blocked if an animation is interrupted.
       timer = setTimeout(finish, 5000);
@@ -89,7 +87,6 @@ export function SiteMotion() {
       intro?.kill();
       observer?.disconnect();
       animations.forEach(animation => { animation.progress(1); animation.kill(); });
-      skip?.removeEventListener("click", finish);
       document.removeEventListener("keydown", onKey);
       motion.removeEventListener("change", onMotionChange);
       site.inert = false;
@@ -99,7 +96,7 @@ export function SiteMotion() {
   }, [pathname]);
 
   return (
-    <div ref={splashRef} className="site-splash" role="dialog" aria-modal="true" aria-label="Welcome to Cosmocure" style={{ display: "none" }}>
+    <div ref={splashRef} tabIndex={-1} className="site-splash outline-none" role="dialog" aria-modal="true" aria-label="Welcome to Cosmocure" style={{ display: "none" }}>
       <Image className="splash-flower splash-flower-left" src="/images/gold-cosmos.webp" width={400} height={600} alt="" />
       <Image className="splash-flower splash-flower-right" src="/images/gold-cosmos.webp" width={400} height={600} alt="" />
       <div className="splash-content">
@@ -109,7 +106,6 @@ export function SiteMotion() {
         <div className="splash-rule" aria-hidden="true"><span /></div>
       </div>
       <p className="splash-detail splash-location">Aalo · Arunachal Pradesh</p>
-      <button className="splash-skip" type="button">Skip intro</button>
     </div>
   );
 }
