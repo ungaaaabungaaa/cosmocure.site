@@ -2,6 +2,8 @@
 @config "../tailwind.config.js";
 
 :root {
+  /* Keep the light palette even when the browser enables automatic darkening. */
+  color-scheme: only light;
   --background: #f5f0ea;
   --foreground: #3d3a35;
 }

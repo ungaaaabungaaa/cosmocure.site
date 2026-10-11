@@ -1,5 +1,5 @@
 import { MobileQuickActions } from "@/components/MobileQuickActions";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost, Playfair_Display } from "next/font/google";
 import { ClinicStructuredData } from "@/components/ClinicStructuredData";
 import { SiteNavBar } from "@/components/SiteNavBar";
@@ -26,6 +26,12 @@ const jost = Jost({
   weight: ["300", "400", "600"],
   variable: "--font-body",
 });
+
+// Declare the light-only design before styles load to prevent automatic darkening.
+export const viewport: Viewport = {
+  colorScheme: "only light",
+  themeColor: "#f5f0ea",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

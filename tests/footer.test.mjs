@@ -5,6 +5,9 @@ import { readFileSync, existsSync } from "node:fs";
 const origin = "https://www.cosmocure.clinic";
 for (const [path, file] of [["/", "index"], ["/services", "services"], ["/contact", "contact"], ["/privacy-policy", "privacy-policy"]]) {
   const html = readFileSync(`.next/server/app/${file}.html`, "utf8");
+  const head = html.match(/<head>[\s\S]*?<\/head>/)?.[0] ?? "";
+  assert.match(head, /<meta name="color-scheme" content="only light"\s*\/?\s*>/, `${path}: light-only scheme is present before first paint`);
+  assert.match(head, /<meta name="theme-color" content="#f5f0ea"\s*\/?\s*>/, `${path}: light browser theme`);
   assert.equal((html.match(/<h1[ >]/g) || []).length, 1, `${path}: one main heading`);
   assert.match(html, /<title>[^<]*Cosmocure<\/title>/, `${path}: branded title`);
   assert.ok(html.includes(`rel="canonical" href="${origin}${path === "/" ? "" : path}"`) || html.includes(`rel="canonical" href="${origin}${path}"`), `${path}: self canonical`);
