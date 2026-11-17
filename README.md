@@ -32,3 +32,17 @@ pnpm start
 ```
 
 The page checks run against the built HTML. See [SEO setup](docs/seo.md) and [image notes](docs/imagery.md).
+
+## Hosting cost controls
+
+Public pages are prerendered by Next.js. Keep request-time APIs and database
+reads out of these pages unless a feature needs them. Compressed images are
+served directly; Vercel image transformations are disabled.
+
+`vercel.json` lets browsers reuse public assets for one hour. Stable file
+names are not marked immutable, so changed files can refresh after that hour.
+HTML keeps the platform cache policy. Do not apply these public cache headers
+to private customer files, authentication, or transactional endpoints.
+
+Bot controls and spending alerts are separate Vercel project/team settings.
+Caching does not remove bandwidth charges for first visits or bot traffic.
