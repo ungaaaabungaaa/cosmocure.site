@@ -39,8 +39,8 @@ Public pages are prerendered by Next.js. Keep request-time APIs and database
 reads out of these pages unless a feature needs them. Compressed images are
 served directly; Vercel image transformations are disabled.
 
-`vercel.json` lets browsers reuse public assets for one hour. Stable file
-names are not marked immutable, so changed files can refresh after that hour.
+`vercel.json` lets browsers reuse public assets for one day. Stable file
+names are not marked immutable, so changed files can refresh after that day.
 HTML keeps the platform cache policy. Do not apply these public cache headers
 to private customer files, authentication, or transactional endpoints.
 
